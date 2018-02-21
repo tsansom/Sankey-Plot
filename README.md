@@ -1,6 +1,10 @@
+# Forked from http://github.com/tamc/sankey
+
+---
+
 # JAVASCRIPT SANKEY DIAGRAMS
 
-A javascript library for drawing Sankey diagrams. 
+A javascript library for drawing Sankey diagrams.
 
 The canonical code is at:
 http://github.com/tamc/sankey
@@ -37,5 +41,3 @@ http://github.com/tamc/sankey/issues
 
 Please submit patches to:
 http://github.com/tamc/sankey/pullrequests
-
-
