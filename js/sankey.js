@@ -19,10 +19,10 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       this.r = Raphael(this.display_in_element, this.display_width, this.display_height);
       this.left_margin = 100;
       this.right_margin = 100;
-      this.y_space = 10;
+      this.y_space = 30;
       this.threshold_for_drawing = 0;
-      this.box_width = 50;
-      this.flow_edge_width = 2;
+      this.box_width = 20;
+      this.flow_edge_width = 4;
       this.flow_curve = 0.25;
       this.boxes = {};
       this.box_array = [];
@@ -472,11 +472,19 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
   TransformationBox = (function() {
     function TransformationBox(sankey, name) {
       this.sankey = sankey;
-      this.name = name;
+      this.name = name.split("-")[1];
       this.hover_end = __bind(this.hover_end, this);
       this.hover_start = __bind(this.hover_start, this);
-      this.label_text = this.sankey.convert_box_description_labels_callback(name);
-      this.line_colour = "orange";
+      this.label_text = this.sankey.convert_box_description_labels_callback(this.name);
+      if (this.name === "1") {
+          this.line_colour = "green";
+      } else if (this.name === "2") {
+          this.line_colour = "khaki";
+      } else if (this.name === "3") {
+          this.line_colour = "blue"
+      } else if (this.name === "4") {
+          this.line_colour = "coral"
+      }
       this.left_lines = [];
       this.right_lines = [];
       this.x = 0;
