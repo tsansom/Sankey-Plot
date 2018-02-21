@@ -599,15 +599,19 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
     TransformationBox.prototype.labelAttributes = function() {
       if (this.is_left_box()) {
         return {
-          'text-anchor': 'end'
+          'text-anchor': 'end',
+          'font-size': 16
         };
       }
       if (this.is_right_box()) {
         return {
-          'text-anchor': 'start'
+          'text-anchor': 'start',
+          'font-size': 16
         };
       }
-      return {};
+      return {
+          'font-size': 16
+      };
     };
 
     TransformationBox.prototype.numberLabelPositionX = function() {
