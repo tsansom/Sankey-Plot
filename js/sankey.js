@@ -19,10 +19,10 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       this.r = Raphael(this.display_in_element, this.display_width, this.display_height);
       this.left_margin = 100;
       this.right_margin = 100;
-      this.y_space = 30;
+      this.y_space = 40;
       this.threshold_for_drawing = 0;
       this.box_width = 20;
-      this.flow_edge_width = 4;
+      this.flow_edge_width = 2;
       this.flow_curve = 0.25;
       this.boxes = {};
       this.box_array = [];
@@ -477,13 +477,17 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       this.hover_start = __bind(this.hover_start, this);
       this.label_text = this.sankey.convert_box_description_labels_callback(this.name);
       if (this.name === "1") {
-          this.line_colour = "green";
+          this.line_colour = "coral";
       } else if (this.name === "2") {
-          this.line_colour = "khaki";
+          this.line_colour = "orange";
       } else if (this.name === "3") {
-          this.line_colour = "blue"
+          this.line_colour = "khaki"
       } else if (this.name === "4") {
-          this.line_colour = "coral"
+          this.line_colour = "palegreen"
+      } else if (this.name ==="5") {
+          this.line_colour = "dodgerblue"
+      } else {
+          this.line_colour = "violet"
       }
       this.left_lines = [];
       this.right_lines = [];
@@ -580,10 +584,10 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
 
     TransformationBox.prototype.labelPositionX = function() {
       if (this.is_left_box()) {
-        return this.x - 3.0;
+        return this.x + (this.sankey.box_width / 1.5);
       }
       if (this.is_right_box()) {
-        return this.x + this.sankey.box_width + 3.0;
+        return this.x + (this.sankey.box_width / 2.5);
       }
       return this.x + (this.sankey.box_width / 2);
     };
